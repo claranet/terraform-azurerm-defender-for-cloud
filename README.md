@@ -50,19 +50,25 @@ No modules.
 
 | Name | Type |
 |------|------|
+| [azurerm_security_center_contact.alert_contact](https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/resources/security_center_contact) | resource |
 | [azurerm_security_center_subscription_pricing.mdc](https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/resources/security_center_subscription_pricing) | resource |
 
 ## Inputs
 
 | Name | Description | Type | Default | Required |
 |------|-------------|------|---------|:--------:|
-| services | Defender for Cloud services list to activate. | <pre>list(object({<br>    resource_type = string<br>    tier          = optional(string, "Standard")<br>    subplan       = optional(string, null)<br>  }))</pre> | <pre>[<br>  {<br>    "resource_type": "AppServices"<br>  },<br>  {<br>    "resource_type": "Arm"<br>  },<br>  {<br>    "resource_type": "CloudPosture"<br>  },<br>  {<br>    "resource_type": "ContainerRegistry"<br>  },<br>  {<br>    "resource_type": "Containers"<br>  },<br>  {<br>    "resource_type": "CosmosDbs"<br>  },<br>  {<br>    "resource_type": "Dns"<br>  },<br>  {<br>    "resource_type": "KeyVaults"<br>  },<br>  {<br>    "resource_type": "KubernetesService"<br>  },<br>  {<br>    "resource_type": "OpenSourceRelationalDatabases"<br>  },<br>  {<br>    "resource_type": "SqlServerVirtualMachines"<br>  },<br>  {<br>    "resource_type": "SqlServers"<br>  },<br>  {<br>    "resource_type": "StorageAccounts",<br>    "subplan": "DefenderForStorageV2"<br>  },<br>  {<br>    "resource_type": "VirtualMachines",<br>    "subplan": "P1"<br>  }<br>]</pre> | no |
+| alert\_notifications\_enabled | Whether to send security alerts notifications to the security contact or not. | `bool` | `true` | no |
+| alerts\_to\_admins\_enabled | Whether to send security alerts notifications to Subscription admins (Owners) or not. | `bool` | `true` | no |
+| contact\_email | The email to contact for security alerts. | `string` | `null` | no |
+| contact\_phone | The phone number to contact for security alerts. | `string` | `null` | no |
+| services | Defender for Cloud services list to activate. See [https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/resources/security_center_subscription_pricing](https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/resources/security_center_subscription_pricing) | <pre>list(object({<br>    resource_type = string<br>    tier          = optional(string, "Standard")<br>    subplan       = optional(string, null)<br>  }))</pre> | <pre>[<br>  {<br>    "resource_type": "AppServices"<br>  },<br>  {<br>    "resource_type": "Arm"<br>  },<br>  {<br>    "resource_type": "CloudPosture"<br>  },<br>  {<br>    "resource_type": "ContainerRegistry"<br>  },<br>  {<br>    "resource_type": "Containers"<br>  },<br>  {<br>    "resource_type": "CosmosDbs"<br>  },<br>  {<br>    "resource_type": "Dns"<br>  },<br>  {<br>    "resource_type": "KeyVaults"<br>  },<br>  {<br>    "resource_type": "KubernetesService"<br>  },<br>  {<br>    "resource_type": "OpenSourceRelationalDatabases"<br>  },<br>  {<br>    "resource_type": "SqlServerVirtualMachines"<br>  },<br>  {<br>    "resource_type": "SqlServers"<br>  },<br>  {<br>    "resource_type": "StorageAccounts",<br>    "subplan": "DefenderForStorageV2"<br>  },<br>  {<br>    "resource_type": "VirtualMachines",<br>    "subplan": "P1"<br>  }<br>]</pre> | no |
 
 ## Outputs
 
 | Name | Description |
 |------|-------------|
-| subscribed\_plans | List of subscribed plan and services. |
+| contact\_id | The alert contact object ID. |
+| subscribed\_plans | List of subscribed plans and services. |
 <!-- END_TF_DOCS -->
 
 ## Related documentation
