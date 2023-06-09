@@ -1,8 +1,7 @@
-resource "azurerm_security_center_subscription_pricing" "defender_for_cloud" {
-  name = local.defender_for_cloud_name
+resource "azurerm_security_center_subscription_pricing" "mdc" {
+  for_each = { for s in var.services : s.resource_type => s }
 
-  location            = var.location
-  resource_group_name = var.resource_group_name
-
-  tags = merge(local.default_tags, var.extra_tags)
+  resource_type = each.key
+  tier          = each.value.tier
+  subplan       = each.value.subplan
 }
