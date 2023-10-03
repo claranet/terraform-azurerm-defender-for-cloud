@@ -40,7 +40,7 @@ module "defender_for_cloud" {
 
 | Name | Version |
 |------|---------|
-| azurerm | ~> 3.32 |
+| azurerm | ~> 3.75 |
 
 ## Modules
 
