@@ -11,13 +11,19 @@ variable "services" {
   }))
   default = [
     { resource_type = "AppServices" },
-    { resource_type = "Arm" },
+    {
+      resource_type = "Arm"
+      subplan       = "PerSubscription"
+    },
     { resource_type = "CloudPosture" },
     { resource_type = "ContainerRegistry" },
     { resource_type = "Containers" },
     { resource_type = "CosmosDbs" },
     { resource_type = "Dns" },
-    { resource_type = "KeyVaults" },
+    {
+      resource_type = "KeyVaults"
+      subplan       = "PerKeyVault"
+    },
     { resource_type = "KubernetesService" },
     { resource_type = "OpenSourceRelationalDatabases" },
     { resource_type = "SqlServerVirtualMachines" },

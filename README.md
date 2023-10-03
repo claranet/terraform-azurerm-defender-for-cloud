@@ -40,7 +40,7 @@ module "defender_for_cloud" {
 
 | Name | Version |
 |------|---------|
-| azurerm | ~> 3.32 |
+| azurerm | ~> 3.75 |
 
 ## Modules
 
@@ -61,7 +61,7 @@ No modules.
 | alerts\_to\_admins\_enabled | Whether to send security alerts notifications to Subscription admins (Owners) or not. | `bool` | `true` | no |
 | contact\_email | The email to contact for security alerts. | `string` | `null` | no |
 | contact\_phone | The phone number to contact for security alerts. | `string` | `null` | no |
-| services | Defender for Cloud services list to activate. See [https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/resources/security_center_subscription_pricing](https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/resources/security_center_subscription_pricing) | <pre>list(object({<br>    resource_type = string<br>    tier          = optional(string, "Standard")<br>    subplan       = optional(string, null)<br>  }))</pre> | <pre>[<br>  {<br>    "resource_type": "AppServices"<br>  },<br>  {<br>    "resource_type": "Arm"<br>  },<br>  {<br>    "resource_type": "CloudPosture"<br>  },<br>  {<br>    "resource_type": "ContainerRegistry"<br>  },<br>  {<br>    "resource_type": "Containers"<br>  },<br>  {<br>    "resource_type": "CosmosDbs"<br>  },<br>  {<br>    "resource_type": "Dns"<br>  },<br>  {<br>    "resource_type": "KeyVaults"<br>  },<br>  {<br>    "resource_type": "KubernetesService"<br>  },<br>  {<br>    "resource_type": "OpenSourceRelationalDatabases"<br>  },<br>  {<br>    "resource_type": "SqlServerVirtualMachines"<br>  },<br>  {<br>    "resource_type": "SqlServers"<br>  },<br>  {<br>    "resource_type": "StorageAccounts",<br>    "subplan": "DefenderForStorageV2"<br>  },<br>  {<br>    "resource_type": "VirtualMachines",<br>    "subplan": "P1"<br>  }<br>]</pre> | no |
+| services | Defender for Cloud services list to activate. See [https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/resources/security_center_subscription_pricing](https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/resources/security_center_subscription_pricing) | <pre>list(object({<br>    resource_type = string<br>    tier          = optional(string, "Standard")<br>    subplan       = optional(string, null)<br>  }))</pre> | <pre>[<br>  {<br>    "resource_type": "AppServices"<br>  },<br>  {<br>    "resource_type": "Arm",<br>    "subplan": "PerSubscription"<br>  },<br>  {<br>    "resource_type": "CloudPosture"<br>  },<br>  {<br>    "resource_type": "ContainerRegistry"<br>  },<br>  {<br>    "resource_type": "Containers"<br>  },<br>  {<br>    "resource_type": "CosmosDbs"<br>  },<br>  {<br>    "resource_type": "Dns"<br>  },<br>  {<br>    "resource_type": "KeyVaults",<br>    "subplan": "PerKeyVault"<br>  },<br>  {<br>    "resource_type": "KubernetesService"<br>  },<br>  {<br>    "resource_type": "OpenSourceRelationalDatabases"<br>  },<br>  {<br>    "resource_type": "SqlServerVirtualMachines"<br>  },<br>  {<br>    "resource_type": "SqlServers"<br>  },<br>  {<br>    "resource_type": "StorageAccounts",<br>    "subplan": "DefenderForStorageV2"<br>  },<br>  {<br>    "resource_type": "VirtualMachines",<br>    "subplan": "P1"<br>  }<br>]</pre> | no |
 
 ## Outputs
 
