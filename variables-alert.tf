@@ -1,16 +1,15 @@
 ###############################
 # Security alerts variables
 ###############################
-variable "contact_email" {
-  description = "The email to contact for security alerts."
-  type        = string
-  default     = null
-}
-
-variable "contact_phone" {
-  description = "The phone number to contact for security alerts."
-  type        = string
-  default     = null
+variable "contact" {
+  description = "The name, email and phone number to contact for security alerts."
+  type = object({
+    name  = optional(string)
+    email = optional(string)
+    phone = optional(string)
+  })
+  default  = {}
+  nullable = false
 }
 
 variable "alert_notifications_enabled" {
