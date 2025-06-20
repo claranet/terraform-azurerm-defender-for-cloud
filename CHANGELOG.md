@@ -1,3 +1,27 @@
+## 8.1.0 (2025-06-20)
+
+### Features
+
+* **AZ-1544:** add extension block option 8e6b094
+
+### Miscellaneous Chores
+
+* **AZ-1558:** 🗑️ remove deprecated services 10b2dc9
+* **deps:** update dependency opentofu to v1.9.1 19fa80b
+* **deps:** update dependency pre-commit to v4.2.0 9b434ad
+* **deps:** update dependency terraform-docs to v0.20.0 1f43e27
+* **deps:** update dependency tflint to v0.57.0 7ad528a
+* **deps:** update dependency tflint to v0.58.0 281cd8b
+* **deps:** update dependency trivy to v0.60.0 2f00795
+* **deps:** update dependency trivy to v0.61.1 d0bfb45
+* **deps:** update dependency trivy to v0.62.0 bbf8389
+* **deps:** update dependency trivy to v0.62.1 8ae7d46
+* **deps:** update dependency trivy to v0.63.0 73cb94a
+* **deps:** update pre-commit hook alessandrojcm/commitlint-pre-commit-hook to v9.22.0 166f09a
+* **deps:** update pre-commit hook tofuutils/pre-commit-opentofu to v2.2.0 c91d48e
+* **deps:** update pre-commit hook tofuutils/pre-commit-opentofu to v2.2.1 add4650
+* **deps:** update tools 2ac1ac9
+
 ## 8.0.0 (2025-02-21)
 
 ### ⚠ BREAKING CHANGES
