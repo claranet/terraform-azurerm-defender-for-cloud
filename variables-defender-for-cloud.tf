@@ -15,7 +15,6 @@ variable "services" {
       resource_type = "Arm"
       subplan       = "PerSubscription"
     },
-    { resource_type = "Dns" },
     {
       resource_type = "KeyVaults"
       subplan       = "PerKeyVault"
