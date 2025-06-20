@@ -48,6 +48,7 @@ module "defender_for_cloud" {
 
 | Name | Version |
 |------|---------|
+| azapi | ~> 2.3 |
 | azurerm | ~> 4.0 |
 
 ## Modules
@@ -58,8 +59,15 @@ No modules.
 
 | Name | Type |
 |------|------|
+| [azapi_resource.container_pricing](https://registry.terraform.io/providers/azure/azapi/latest/docs/resources/resource) | resource |
 | [azurerm_security_center_contact.main](https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/resources/security_center_contact) | resource |
+| [azurerm_security_center_subscription_pricing.cloud_posture](https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/resources/security_center_subscription_pricing) | resource |
+| [azurerm_security_center_subscription_pricing.cosmosdbs](https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/resources/security_center_subscription_pricing) | resource |
 | [azurerm_security_center_subscription_pricing.main](https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/resources/security_center_subscription_pricing) | resource |
+| [azurerm_security_center_subscription_pricing.opensourcerelationaldatabases](https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/resources/security_center_subscription_pricing) | resource |
+| [azurerm_security_center_subscription_pricing.sqlservers](https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/resources/security_center_subscription_pricing) | resource |
+| [azurerm_security_center_subscription_pricing.sqlservers_vms](https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/resources/security_center_subscription_pricing) | resource |
+| [azurerm_client_config.current](https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/data-sources/client_config) | data source |
 
 ## Inputs
 
@@ -68,7 +76,18 @@ No modules.
 | alert\_notifications\_enabled | Whether to send security alerts notifications to the security contact or not. | `bool` | `true` | no |
 | alerts\_to\_admins\_enabled | Whether to send security alerts notifications to Subscription admins (Owners) or not. | `bool` | `true` | no |
 | contact | The name, email and phone number to contact for security alerts. | <pre>object({<br/>    name  = optional(string)<br/>    email = optional(string)<br/>    phone = optional(string)<br/>  })</pre> | `{}` | no |
-| services | Defender for Cloud services list to activate. See [https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/resources/security_center_subscription_pricing](https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/resources/security_center_subscription_pricing). | <pre>list(object({<br/>    resource_type = string<br/>    tier          = optional(string, "Standard")<br/>    subplan       = optional(string, null)<br/>  }))</pre> | <pre>[<br/>  {<br/>    "resource_type": "AppServices"<br/>  },<br/>  {<br/>    "resource_type": "Arm",<br/>    "subplan": "PerSubscription"<br/>  },<br/>  {<br/>    "resource_type": "CloudPosture"<br/>  },<br/>  {<br/>    "resource_type": "ContainerRegistry"<br/>  },<br/>  {<br/>    "resource_type": "Containers"<br/>  },<br/>  {<br/>    "resource_type": "CosmosDbs"<br/>  },<br/>  {<br/>    "resource_type": "Dns"<br/>  },<br/>  {<br/>    "resource_type": "KeyVaults",<br/>    "subplan": "PerKeyVault"<br/>  },<br/>  {<br/>    "resource_type": "KubernetesService"<br/>  },<br/>  {<br/>    "resource_type": "OpenSourceRelationalDatabases"<br/>  },<br/>  {<br/>    "resource_type": "SqlServerVirtualMachines"<br/>  },<br/>  {<br/>    "resource_type": "SqlServers"<br/>  },<br/>  {<br/>    "resource_type": "StorageAccounts",<br/>    "subplan": "DefenderForStorageV2"<br/>  },<br/>  {<br/>    "resource_type": "VirtualMachines",<br/>    "subplan": "P1"<br/>  }<br/>]</pre> | no |
+| enable\_agentless\_discovery\_for\_kubernetes | Enable agentless discovery for Kubernetes extension in Defender for Cloud. | `bool` | `true` | no |
+| enable\_agentless\_vm\_scanning | Enable agentless VM scanning extension in Defender for Cloud. | `bool` | `true` | no |
+| enable\_container\_integrity\_contribution | Enable container integrity contribution extension in Defender for Cloud. | `bool` | `true` | no |
+| enable\_container\_pricing | Enable container pricing in Defender for Cloud. | `bool` | `true` | no |
+| enable\_container\_registries\_vulnerability\_assessments | Enable container registries vulnerability assessments extension in Defender for Cloud. | `bool` | `true` | no |
+| enable\_container\_sensor | Enable container sensor extension in Defender for Cloud. | `bool` | `true` | no |
+| enable\_cosmosdbs\_pricing | Enable Cosmos DBs pricing in Defender for Cloud. | `bool` | `true` | no |
+| enable\_opensourcerelationaldatabases\_pricing | Enable open source relational databases pricing in Defender for Cloud. | `bool` | `true` | no |
+| enable\_sqlservers\_pricing | Enable SQL servers pricing in Defender for Cloud. | `bool` | `true` | no |
+| enable\_sqlservers\_vms\_pricing | Enable SQL servers VMs pricing in Defender for Cloud. | `bool` | `true` | no |
+| exclusion\_tags | List of VM tags to exclude from Agentless scanning Defender for Cloud. | <pre>list(object({<br/>    key   = string<br/>    value = string<br/>  }))</pre> | `[]` | no |
+| services | Defender for Cloud services list to activate. See [https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/resources/security_center_subscription_pricing](https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/resources/security_center_subscription_pricing). | <pre>list(object({<br/>    resource_type = string<br/>    tier          = optional(string, "Standard")<br/>    subplan       = optional(string, null)<br/>  }))</pre> | <pre>[<br/>  {<br/>    "resource_type": "AppServices"<br/>  },<br/>  {<br/>    "resource_type": "Arm",<br/>    "subplan": "PerSubscription"<br/>  },<br/>  {<br/>    "resource_type": "Dns"<br/>  },<br/>  {<br/>    "resource_type": "KeyVaults",<br/>    "subplan": "PerKeyVault"<br/>  },<br/>  {<br/>    "resource_type": "StorageAccounts",<br/>    "subplan": "DefenderForStorageV2"<br/>  },<br/>  {<br/>    "resource_type": "VirtualMachines",<br/>    "subplan": "P1"<br/>  }<br/>]</pre> | no |
 
 ## Outputs
 
