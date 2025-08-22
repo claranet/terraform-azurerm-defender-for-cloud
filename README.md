@@ -49,7 +49,7 @@ module "defender_for_cloud" {
 | Name | Version |
 |------|---------|
 | azapi | ~> 2.3 |
-| azurerm | ~> 4.0 |
+| azurerm | ~> 4.31 |
 
 ## Modules
 
