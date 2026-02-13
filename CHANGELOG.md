@@ -1,3 +1,48 @@
+## 8.1.1 (2026-02-13)
+
+### Code Refactoring
+
+* **gitlab MR template:** ♻️ update default reviewers group with Azure Factory 🔧 e171a4e
+
+### Miscellaneous Chores
+
+* **⚙️:** ✏️ update template identifier for MR review 6aacf13
+* 🗑️ remove old commitlint configuration files b54fea5
+* **deps:** 🔗 bump AzureRM provider version to v4.31+ 5df5f55
+* **deps:** update dependency opentofu to v1.10.0 7dbe897
+* **deps:** update dependency opentofu to v1.10.1 38887f2
+* **deps:** update dependency opentofu to v1.10.3 2ba9937
+* **deps:** update dependency opentofu to v1.10.6 4eb26de
+* **deps:** update dependency opentofu to v1.10.7 b40aa8d
+* **deps:** update dependency opentofu to v1.11.2 0103c50
+* **deps:** update dependency opentofu to v1.11.3 52af553
+* **deps:** update dependency opentofu to v1.11.4 26ca4da
+* **deps:** update dependency opentofu to v1.11.5 bc88379
+* **deps:** update dependency pre-commit to v4.4.0 402eab2
+* **deps:** update dependency pre-commit to v4.5.0 eac7f5f
+* **deps:** update dependency pre-commit to v4.5.1 59f73ff
+* **deps:** update dependency tflint to v0.58.1 591943a
+* **deps:** update dependency tflint to v0.59.1 1a22aa7
+* **deps:** update dependency tflint to v0.60.0 a3ee11c
+* **deps:** update dependency tflint to v0.61.0 4c7b5a7
+* **deps:** update dependency trivy to v0.66.0 0f10a78
+* **deps:** update dependency trivy to v0.67.0 0a89977
+* **deps:** update dependency trivy to v0.67.1 fd6ca02
+* **deps:** update dependency trivy to v0.67.2 6b34cc5
+* **deps:** update dependency trivy to v0.68.1 f4a2a75
+* **deps:** update dependency trivy to v0.68.2 21395d9
+* **deps:** update dependency trivy to v0.69.0 40468b4
+* **deps:** update dependency trivy to v0.69.1 6555e5f
+* **deps:** update pre-commit hook crate-ci/committed to v1.1.10 bf8edf4
+* **deps:** update pre-commit hook crate-ci/committed to v1.1.8 3a27eb1
+* **deps:** update pre-commit hook crate-ci/committed to v1.1.9 a52749d
+* **deps:** update pre-commit hook pre-commit/pre-commit-hooks to v6 c08c3fa
+* **deps:** update pre-commit hook tofuutils/pre-commit-opentofu to v2.2.2 fa80bf5
+* **deps:** update tools bd67be3
+* **deps:** update tools 84358c4
+* **deps:** update tools dc42d35
+* **deps:** update tools 6cb36fb
+
 ## 8.1.0 (2025-06-20)
 
 ### Features
