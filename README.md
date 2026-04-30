@@ -47,7 +47,7 @@ module "defender_for_cloud" {
 ## Providers
 
 | Name | Version |
-|------|---------|
+| ---- | ------- |
 | azapi | ~> 2.3 |
 | azurerm | ~> 4.31 |
 
@@ -58,7 +58,7 @@ No modules.
 ## Resources
 
 | Name | Type |
-|------|------|
+| ---- | ---- |
 | [azapi_resource.container_pricing](https://registry.terraform.io/providers/azure/azapi/latest/docs/resources/resource) | resource |
 | [azurerm_security_center_contact.main](https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/resources/security_center_contact) | resource |
 | [azurerm_security_center_subscription_pricing.cloud_posture](https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/resources/security_center_subscription_pricing) | resource |
@@ -72,7 +72,7 @@ No modules.
 ## Inputs
 
 | Name | Description | Type | Default | Required |
-|------|-------------|------|---------|:--------:|
+| ---- | ----------- | ---- | ------- | :------: |
 | alert\_notifications\_enabled | Whether to send security alerts notifications to the security contact or not. | `bool` | `true` | no |
 | alerts\_to\_admins\_enabled | Whether to send security alerts notifications to Subscription admins (Owners) or not. | `bool` | `true` | no |
 | contact | The name, email and phone number to contact for security alerts. | <pre>object({<br/>    name  = optional(string)<br/>    email = optional(string)<br/>    phone = optional(string)<br/>  })</pre> | `{}` | no |
@@ -92,7 +92,7 @@ No modules.
 ## Outputs
 
 | Name | Description |
-|------|-------------|
+| ---- | ----------- |
 | alert\_contact\_id | The alert contact object ID. |
 | resource\_alert\_contact | The alert contact object. |
 | resource\_subscribed\_plans | List of subscribed plans and services. |
