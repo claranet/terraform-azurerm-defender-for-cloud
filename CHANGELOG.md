@@ -1,3 +1,9 @@
+## 9.0.1 (2026-08-20)
+
+### Bug Fixes
+
+* **SREAA-368:** 🐛 restore the OpenTofu minimum version in versions.tofu cb4e14a
+
 ## 9.0.0 (2026-08-19)
 
 ### ⚠ BREAKING CHANGES
