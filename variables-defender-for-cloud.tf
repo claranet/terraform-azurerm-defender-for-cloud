@@ -41,6 +41,18 @@ variable "exclusion_tags" {
   nullable = true
 }
 
+variable "cloud_posture_pricing_tier" {
+  description = "Pricing tier of the CloudPosture plan in Defender for Cloud. Possible values are `Free` and `Standard`. Extensions are only applied with the `Standard` tier."
+  type        = string
+  default     = "Standard"
+  nullable    = false
+
+  validation {
+    condition     = contains(["Free", "Standard"], var.cloud_posture_pricing_tier)
+    error_message = "`cloud_posture_pricing_tier` must be either `Free` or `Standard`."
+  }
+}
+
 variable "enable_container_pricing" {
   description = "Enable container pricing in Defender for Cloud."
   type        = bool
