@@ -1,3 +1,24 @@
+## 9.1.0 (2026-11-20)
+
+### Features
+
+* ✨ add cloud_posture_pricing_tier variable 613edf7
+
+### Continuous Integration
+
+* **release:** drop semantic-release-slack-bot, the receiver posts releases 96dd62b
+
+### Miscellaneous Chores
+
+* **deps:** ⬆️ update tools 🔗 1c6abfd
+* **deps:** update dependency opentofu to v1.13.0 d07a27f
+* **deps:** update dependency opentofu to v1.13.1 70dafec
+* **deps:** update dependency opentofu to v1.13.2 4aeca7d
+* **deps:** update dependency opentofu to v1.13.9 23add4b
+* **deps:** update dependency tflint to v0.65.0 fe79298
+* **deps:** update dependency tflint to v0.66.0 a90ed07
+* **deps:** update pre-commit hook crate-ci/committed to v1.1.12 98e8d65
+
 ## 9.0.1 (2026-08-20)
 
 ### Bug Fixes
