@@ -76,6 +76,7 @@ No modules.
 | ---- | ----------- | ---- | ------- | :------: |
 | alert\_notifications\_enabled | Whether to send security alerts notifications to the security contact or not. | `bool` | `true` | no |
 | alerts\_to\_admins\_enabled | Whether to send security alerts notifications to Subscription admins (Owners) or not. | `bool` | `true` | no |
+| cloud\_posture\_pricing\_tier | Pricing tier of the CloudPosture plan in Defender for Cloud. Possible values are `Free` and `Standard`. Extensions are only applied with the `Standard` tier. | `string` | `"Standard"` | no |
 | contact | The name, email and phone number to contact for security alerts. | <pre>object({<br/>    name  = optional(string)<br/>    email = optional(string)<br/>    phone = optional(string)<br/>  })</pre> | `{}` | no |
 | enable\_agentless\_discovery\_for\_kubernetes | Enable agentless discovery for Kubernetes extension in Defender for Cloud. | `bool` | `true` | no |
 | enable\_agentless\_vm\_scanning | Enable agentless VM scanning extension in Defender for Cloud. | `bool` | `true` | no |
