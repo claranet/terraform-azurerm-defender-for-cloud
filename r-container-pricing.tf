@@ -1,6 +1,6 @@
 resource "azapi_resource" "container_pricing" {
   count     = var.enable_container_pricing ? 1 : 0
-  type      = "Microsoft.Security/pricings@2024-01-01"
+  type      = "Microsoft.Security/pricings@2026-07-01"
   name      = "Containers"
   parent_id = "/subscriptions/${data.azurerm_client_config.current.subscription_id}"
   body = {
