@@ -1,3 +1,14 @@
+## 9.1.1 (2026-11-26)
+
+### Bug Fixes
+
+* **azapi:** bump Microsoft.Security/pricings API to 2026-07-01 5c32daa
+
+### Miscellaneous Chores
+
+* **azapi:** bump Microsoft.Security/pricings API to 2026-07-01 19f54c8
+* **deps:** update dependency terraform-docs to v0.25.1 cbc1890
+
 ## 9.1.0 (2026-11-20)
 
 ### Features
